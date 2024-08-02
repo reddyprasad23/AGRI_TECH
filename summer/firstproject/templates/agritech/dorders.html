@@ -1,0 +1,30 @@
+{% extends 'agritech/base.html' %}
+{% block title %}yourorders{% endblock %}
+{% block content %}
+<div class="container-fluid mt-4">
+  <div class="card col-md shadow-lg h-100 w-100">
+    <div class="card-body">
+        {% csrf_token %}
+        <h5 align="center">Oders List</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Required Quantity</th>
+              <th>Advance Paid</th>
+            </tr>
+            <tbody>
+              {% for i in q %}
+              <tr>
+                <td>{{i.0}}</td>
+                <td>{{i.1}}</td>
+                <td>{{i.2}}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </thead>
+        </table> 
+    </div>
+  </div>
+</div>
+{% endblock %}

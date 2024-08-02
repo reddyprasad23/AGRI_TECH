@@ -1,0 +1,33 @@
+{% extends 'agritech/base.html' %}
+{% block title %}farmerlist{% endblock %}
+{% block content %}
+<div class="container-fluid mt-4">
+  <div class="card col-md shadow-lg h-100">
+    <div class="card-body">
+      	{% csrf_token %}
+        <h5 align="center">BuyerList</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Buyer Name</th>
+              <th>Mobile Number</th>
+              <th>Required Product</th>
+              <th>State</th>
+            </tr>
+            <tbody>
+              {% for i in y %}
+              <tr>
+                <td>{{i.0}}</td>
+                <td>{{i.1}}</td>
+                <td>{{i.2}}</td>
+                <td>{{i.3}}</td>
+                <td><a href="" class="btn btn-success">Request</a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </thead>
+        </table> 
+    </div>
+  </div>
+</div>
+{% endblock %}

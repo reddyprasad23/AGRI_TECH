@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="{% static 'images/demo.jpg' %}">
+  <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="{% static '/js/bootstrap.min.js' %}"></script>
+	<title></title>
+</head>
+<body>
+<div class="container mt-4">
+  <div class="card col-md-4 mx-auto shadow-lg border border-success">
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <a href="{% url 'profile' %}" class="btn btn-outline-info">farmer</a>
+        </div>
+        <div class="col">
+          <a href="{% url 'cprofile' %}" class="btn btn-outline-info">consumer</a>
+        </div>
+      </div>
+      <form method = "POST" enctype="multipart/form-data">
+      	{% csrf_token %}
+      	{% for i in q %}
+           {{i}}
+        {%  endfor %}
+        {% for j in r %}
+           {{j}}
+        {% endfor %}
+        <div class="row">
+          <div class="col">
+            <input type="submit" value="submit" class="btn btn-success form-control">
+          </div>
+          <div class="col">
+            <input type="reset" value="clear" class="btn btn-warning form-control">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

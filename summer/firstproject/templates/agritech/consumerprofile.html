@@ -1,0 +1,24 @@
+{% extends 'agritech/base.html' %}
+{% block content %}
+<div class="container-fluid mt-4">
+	<div class="row">
+		<div class="card col-mod-3 shadow-lg h-100">
+			<div class="card-body">
+				{% csrf_token %}
+				<img src="{{k.6.url}}" width="150" height="150" class="center">
+				<style type="text/css">
+					img {
+						border-radius: 50%;
+					}
+				</style>
+				<h5>Name : {{k.0}}</h5><br>
+				<h5>Email : {{k.1}}</h5><br>
+				<h5>Mobile no. : {{k.2}}</h5><br>
+				<h5>State Name : {{k.3}}</h5><br>
+				<h5>Required Product : {{k.5}}</h5><br>
+				<h5>Id Proof : {{k.4}}</h5><br>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

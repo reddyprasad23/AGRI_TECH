@@ -1,0 +1,25 @@
+{% extends 'agritech/base.html' %}
+{% block title %}Logout{% endblock %}
+{% block content %}
+<div class="container mt-4">
+	<div class="card col-md-4 mx-auto shadow-lg border border-primary">
+		<div class="card-body">
+			<h4>
+				Logout
+			</h4>
+			<p>Are you sure you want to log out?</p>
+			<div class="row">
+				<div class="col">
+					<a href="{% url 'home' %}" class="btn btn-primary">Yes</a>
+				</div>
+			</div>
+			<p>If you want to Login again</p>
+			<div class="row">
+				<div class="col">
+					<a href="{% url 'login' %}" class="btn btn-success">Yes</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
